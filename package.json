@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "expo": "^51.0.0",
+    "expo-video": "^1.2.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
@@ -8,5 +9,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3"
+  },
+  "name": "expo-video-min",
+  "version": "1.0.0",
+  "scripts": {
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   }
 }
