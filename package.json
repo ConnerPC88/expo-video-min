@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "expo": "~51.0.35",
+    "expo": "~51.0.36",
     "expo-video": "^1.2.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
