@@ -1,4 +1,4 @@
-import { useVideoPlayer, VideoView } from 'expo-video';
+import { useVideoPlayer, VideoView, isPictureInPictureSupported } from 'expo-video';
 import { useEffect, useRef, useState } from 'react';
 import { PixelRatio, StyleSheet, View, Button } from 'react-native';
 
@@ -9,6 +9,9 @@ export default function VideoScreen() {
     const ref = useRef(null);
     const [isPlaying, setIsPlaying] = useState(true);
     const player = useVideoPlayer(videoSource, player => {
+        player.staysActiveInBackground = false;
+        player.showNowPlayingNotification = true;
+        console.log(isPictureInPictureSupported());
         player.loop = true;
         player.play();
     });
@@ -29,8 +32,11 @@ export default function VideoScreen() {
                 ref={ref}
                 style={styles.video}
                 player={player}
-                allowsFullscreen
-                allowsPictureInPicture
+                allowsPictureInPicture={true}
+                startsPictureInPictureAutomatically={true}
+                onPictureInPictureStart={() => console.log(true)}
+                onPictureInPictureStop={() => console.log(false)}
+                nativeControls={true}
             />
             <View style={styles.controlsContainer}>
                 <Button

@@ -8,9 +8,6 @@
       "android",
       "web"
     ],
-    "plugins": [
-      "expo-video"
-    ],
     "android": {
       "package": "com.yourcompany.yourappname",
       "versionCode": 1
